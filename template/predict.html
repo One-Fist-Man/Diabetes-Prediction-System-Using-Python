@@ -1,0 +1,111 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>predict</title>
+    <style type="text/css">
+    div{
+     color:'white';
+    }
+    /* .main{ */
+/* <!--     position:fixed;-->
+<!--     top:20px;-->
+<!--     left:500px;-->
+<!--     width:550px;-->
+<!--     background-color:white;-->
+<!--     border-radius:2px;-->
+<!--     align-item:center;-->
+<!--     padding:3%;--> */
+    /* } */
+    h1{
+     color:'white';
+     font-family:arial, sans-serif;
+     font-size:40px;
+     font-weight:bold;
+     margin-top:100px;
+    }
+    h2{
+     color:'white';
+     font-family:arial, sans-serif;
+     font-size:30px;
+     font-weight:bold;
+/* <!--     margin-top:400px;--> */
+    }
+    body{
+     background-image:url("{% static 'diabeticsPrediction/images/DPimages3.jpg'%}");
+     background-size: 100%;
+    }
+
+    input[type=submit]{
+     background-color:#4B0150;
+     border:2px;
+     color:white;
+     padding:8px 16px;
+     cursor:pointer;
+     margin-top:15px;
+/* <!--      position:fixed;-->
+<!--     top:20px;-->
+<!--     left:500px;--> */
+    }
+    </style>
+</head>
+<body>
+  <div align="center" class="main">
+      <h1  style="color:black" >Please enter the folloing information:</h1>
+      <form action="result">
+         <table>
+             <tr>
+                 <td style="color:black;font-size:30px;"  align="right">Pregnancies:</td>
+                 <td align="left"><input type="text" name="n1"></td>
+             </tr>
+
+             <tr>
+                 <td style="color:black;font-size:30px;"  align="right">Glucose:</td>
+                 <td align="left"><input type="text" name="n2"></td>
+             </tr>
+
+             <tr>
+                 <td style="color:black;font-size:30px;"  align="right">Blood pressure:</td>
+                 <td align="left"><input type="text" name="n3"></td>
+             </tr>
+
+             <tr>
+                 <td style="color:black;font-size:30px;"  align="right">Skin thickness:</td>
+                 <td align="left"><input type="text" name="n4"></td>
+             </tr>
+
+             <tr>
+                 <td style="color:black;font-size:30px;"  align="right">Insulin:</td>
+                 <td align="left"><input type="text" name="n5"></td>
+             </tr>
+
+              <tr>
+                 <td style="color:black;font-size:30px;"  align="right">BMI:</td>
+                 <td align="left"><input type="text" name="n6"></td>
+             </tr>
+
+              <tr>
+                 <td style="color:black;font-size:30px;"  align="right">Diabetes P.F. :</td>
+                 <td align="left"><input type="text" name="n7"></td>
+             </tr>
+             <tr>
+                 <td style="color:black;font-size:30px;"  align="right">Age:</td>
+                 <td align="left"><input type="text" name="n8"></td>
+             </tr>
+         </table>
+          <input type="submit">
+      </form>
+       <br>
+
+        <h2  style="color:black;display:inline"  >  Result: 
+        {% if result2 == "Positive" %}
+        <h2 style="color:green;display:inline">Positive</h2>
+        {% else %}
+        <h2 style="color:red;display:inline">Negative</h2>
+        {% endif %}
+        </h2>
+
+    </div>
+</body>
+</html>
